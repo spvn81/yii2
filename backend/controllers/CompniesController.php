@@ -4,14 +4,14 @@ namespace backend\controllers;
 
 use backend\models\Compnies;
 use backend\models\CompniesSearch;
-use yii\web\Controller;
+use backend\Module\settings\controllers\DefaultController;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
  * CompniesController implements the CRUD actions for Compnies model.
  */
-class CompniesController extends Controller
+class CompniesController extends DefaultController
 {
     /**
      * @inheritDoc

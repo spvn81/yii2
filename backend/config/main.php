@@ -14,7 +14,14 @@ return [
     'modules' => [
             'settings' => [
                 'class' => 'backend\Module\settings\settings',
-            ]
+            ],
+            'blog' => [
+                'class' => 'akiraz2\blog\Module',
+                'controllerNamespace' => 'akiraz2\blog\controllers\backend',
+                //'adminAccessControl' => 'common\components\AdminAccessControl', // null - by default 
+            ],
+
+
 
     ],
     'components' => [

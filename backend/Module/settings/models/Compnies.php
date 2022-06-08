@@ -9,6 +9,7 @@ use Yii;
  *
  * @property int $id
  * @property string $company_name
+ * @property string|null $company_start_date
  * @property string $email
  * @property string $address
  * @property string $company_cretated_date
@@ -36,7 +37,7 @@ class Compnies extends \yii\db\ActiveRecord
             [['company_name', 'email', 'address', 'compant_status'], 'required'],
             [['address', 'compant_status'], 'string'],
             [['company_cretated_date'], 'safe'],
-            [['company_name', 'email'], 'string', 'max' => 255],
+            [['company_name', 'company_start_date', 'email'], 'string', 'max' => 255],
         ];
     }
 
@@ -48,6 +49,7 @@ class Compnies extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'company_name' => 'Company Name',
+            'company_start_date' => 'Company Start Date',
             'email' => 'Email',
             'address' => 'Address',
             'company_cretated_date' => 'Company Cretated Date',

@@ -4,7 +4,6 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
-use backend\models\Compnies;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\CompniesSearch */
@@ -31,17 +30,18 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'company_name',
+            'company_start_date',
             'email:email',
             'address:ntext',
-            'company_cretated_date',
+            //'company_cretated_date',
             //'compant_status',
-            [
-                'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, Compnies $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'id' => $model->id]);
-                 }
-            ],
-        ],
+            // [
+            //     'class' => ActionColumn::className(),
+            //     'urlCreator' => function ($action, Compnies $model, $key, $index, $column) {
+            //         return Url::toRoute([$action, 'id' => $model->id]);
+            //      }
+            // ],
+        ], 
     ]); ?>
 
 
