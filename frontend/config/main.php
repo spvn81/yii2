@@ -21,29 +21,21 @@ return [
             'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
         ],
 
-
-
-
-        'modules' => [
-            'blog' => [
-                'class' => 'akiraz2\blog\Module',
-                'controllerNamespace' => 'akiraz2\blog\controllers\frontend',
-                'blogPostPageCount' => 6,
-                'blogCommentPageCount' => 10, //20 by default
-                'enableComments' => true, //false by default
-                'schemaOrg' => [ // empty array [] by default! 
-                    'publisher' => [
-                        'logo' => '/img/logo.png',
-                        'logoWidth' => 191,
-                        'logoHeight' => 74,
-                        'name' => 'My Company',
-                        'phone' => '+1 800 488 80 85',
-                        'address' => 'City, street, house'
-                    ]
-                ]
+        'i18n' => [
+            'translations' => [
+                '*' => [
+                    'class'          => 'yii\i18n\PhpMessageSource',
+                    'basePath'       => '@app/messages', // if advanced application, set @frontend/messages
+                    'sourceLanguage' => 'en',
+                    'fileMap'        => [
+                        //'main' => 'main.php',
+                    ],
+                ],
             ],
         ],
 
+
+  
 
 
 
@@ -78,5 +70,30 @@ return [
         ],
         */
     ],
+
+
+    'modules' => [
+        'blog' => [
+            'class' => 'akiraz2\blog\Module',
+            'controllerNamespace' => 'akiraz2\blog\controllers\frontend',
+            'blogPostPageCount' => 6,
+            'blogCommentPageCount' => 10, //20 by default
+            'enableComments' => true, //false by default
+            'schemaOrg' => [ // empty array [] by default! 
+                'publisher' => [
+                    'logo' => '/img/logo.png',
+                    'logoWidth' => 191,
+                    'logoHeight' => 74,
+                    'name' => 'My Company',
+                    'phone' => '+1 800 488 80 85',
+                    'address' => 'City, street, house'
+                ]
+            ]
+        ],
+    ],
+
+
+
+
     'params' => $params,
 ];
