@@ -2,19 +2,19 @@
 
 namespace backend\controllers;
 
-use backend\models\Branches;
-use backend\models\BranchesSearch;
-use yii\web\Controller;
+use backend\models\TestTwo;
+use backend\models\TestTwoSearch;
+use backend\Module\settings\controllers\DefaultController;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * BranchesController implements the CRUD actions for Branches model.
+ * TestTwoController implements the CRUD actions for TestTwo model.
  */
-class BranchesController extends Controller
+class TestTwoController extends DefaultController
 {
     /**
-     * @inheritDoc 
+     * @inheritDoc
      */
     public function behaviors()
     {
@@ -32,13 +32,13 @@ class BranchesController extends Controller
     }
 
     /**
-     * Lists all Branches models.
+     * Lists all TestTwo models.
      *
      * @return string
      */
     public function actionIndex()
     {
-        $searchModel = new BranchesSearch();
+        $searchModel = new TestTwoSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
@@ -48,8 +48,8 @@ class BranchesController extends Controller
     }
 
     /**
-     * Displays a single Branches model.
-     * @param string $id ID
+     * Displays a single TestTwo model.
+     * @param int $id ID
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -61,13 +61,13 @@ class BranchesController extends Controller
     }
 
     /**
-     * Creates a new Branches model.
+     * Creates a new TestTwo model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return string|\yii\web\Response
      */
     public function actionCreate()
     {
-        $model = new Branches();
+        $model = new TestTwo();
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
@@ -83,9 +83,9 @@ class BranchesController extends Controller
     }
 
     /**
-     * Updates an existing Branches model.
+     * Updates an existing TestTwo model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param string $id ID
+     * @param int $id ID
      * @return string|\yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -103,9 +103,9 @@ class BranchesController extends Controller
     }
 
     /**
-     * Deletes an existing Branches model.
+     * Deletes an existing TestTwo model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param string $id ID
+     * @param int $id ID
      * @return \yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -117,15 +117,15 @@ class BranchesController extends Controller
     }
 
     /**
-     * Finds the Branches model based on its primary key value.
+     * Finds the TestTwo model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param string $id ID
-     * @return Branches the loaded model
+     * @param int $id ID
+     * @return TestTwo the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Branches::findOne(['id' => $id])) !== null) {
+        if (($model = TestTwo::findOne(['id' => $id])) !== null) {
             return $model;
         }
 

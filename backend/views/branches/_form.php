@@ -10,8 +10,8 @@ use backend\models\Compnies;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="branches-form">
-
+<div class="branches-form"> 
+ 
     <?php $form = ActiveForm::begin(); ?>
 
     <?=   $form->field($model,'company_id')->dropDownList(ArrayHelper::map(Compnies::find()->all(),'id','company_name'))   ?>
